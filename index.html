@@ -1,461 +1,987 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Portafolio de Fernando Carstens</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio profesional especializado en Big Data, AI y Python. Con proyectos en Machine Learning, análisis de datos y desarrollo de bots.">
+  <meta name="keywords" content="Big Data, BI, Python, Machine Learning, Streamlit, Power BI, League of Legends, SQL">
+  <title>Fernando Carstens - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      /* Modo oscuro (predeterminado) */
+      --bg-color: #111827;
+      --bg-secondary: #1f2937;
+      --text-color: #f9fafb;
+      --text-secondary: #d1d5db;
+      --accent-color: #60a5fa;
+      --accent-hover: #3b82f6;
+      --tag-bg: #1e40af;
+      --tag-text: #dbeafe;
+      --card-bg: #1f2937;
+      --border-color: #374151;
+      --header-gradient-start: #1e3a8a;
+      --header-gradient-end: #2563eb;
+    }
 
-		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<a class="image avatar"><video src="images/1.mp4" width="100" height="100" autoplay muted loop/></a>
-					<h1><strong>Hola, soy Fernando</strong>,<br/>
-					ingeniero de sistemas y<br/>
-					editor audiovisual<br/>
-					</h1>
-				</div>
-			</header>
+    [data-theme="light"] {
+      --bg-color: #f9fafb;
+      --bg-secondary: #e5e7eb;
+      --text-color: #111827;
+      --text-secondary: #4b5563;
+      --accent-color: #2563eb;
+      --accent-hover: #1d4ed8;
+      --tag-bg: #bfdbfe;
+      --tag-text: #1e40af;
+      --card-bg: #ffffff;
+      --border-color: #d1d5db;
+      --header-gradient-start: #60a5fa;
+      --header-gradient-end: #3b82f6;
+    }
 
-		<!-- Main -->
-			<div id="main">
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
 
-				<!-- One -->
-					<section id="one">
-						<header class="major">
-							<h2>En internet competimos por la atención de las personas. Mi trabajo es crear contenido audiovisual para ayudarte a atrapar a tu audiencia ideal.</h2>
-						</header>
-						<p>Soy un editor multimedia profesional con experiencia en la Suite de Adobe. En el transcurso de cinco años, trabajé para un medio de comunicación sin fines de lucro. Actualmente trabajo como freelancer para empresas de social media pero también estoy disponible para involucrarme en proyectos adicionales que me ofrezcan experiencias diferentes. Mi trabajo es crear contenido que enganche a la audiencia correcta. Como un plus, tengo un alto manejo de herramientas informáticas y tecnológicas, desde manejar muy bien Wordpress o aprender rápidamente cualquier software o hardware.</br></br>Para proyectos de mayor complejidad asociados a la producción de contenido, tengo asesores personales expertos en Comunicación y Publicidad.</br></br>Como Ingeniero de Sistemas, también he desarrollado habilidades para manejar todo tipo de softwares. Particularmente disfruto el encontrar soluciones a problemas relacionados con softwares. Además, tengo experiencia en soporte técnico en español. En mí puedes encontrar un editor y asistente confiable.</p>
-					</section>
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-				<!-- Two -->
-					<section id="two">
-						<h2>Algunos proyectos realizados</h2>
-						<div class="row">
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/eUU7qkehU8Q" class="image fit thumb"><img src="images/thumbs/001.jpg" alt="" /></a>
-								<h3>Animación realizada para canal de Youtube</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/-6rC4OPplS0" class="image fit thumb"><img src="images/thumbs/104.jpg" alt="" /></a>
-								<h3>Animación de logotipo</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/iRLckzLk3Kg" class="image fit thumb"><img src="images/thumbs/008.jpg" alt="" /></a>
-								<h3>Reel de banda de Rock</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/v5Gf6e9hGII" class="image fit thumb"><img src="images/thumbs/004.jpg" alt="" /></a>
-								<h3>Video realizado para podcast</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/5-zs43of97U" class="image fit thumb"><img src="images/thumbs/003.jpg" alt="" /></a>
-								<h3>Cámara y Edición para cortometraje</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/q4Mz0655ouQ" class="image fit thumb"><img src="images/thumbs/009.jpg" alt="" /></a>
-								<h3>Video realizado para podcast</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/ySJLAwEoCsU" class="image fit thumb"><img src="images/thumbs/101.jpg" alt="" /></a>
-								<h3>Video corporativo para empresa privada</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/bdOapP9i344" class="image fit thumb"><img src="images/thumbs/102.jpg" alt="" /></a>
-								<h3>Video corporativo para empresa privada</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/k16TN5P5tmU" class="image fit thumb"><img src="images/thumbs/103.jpg" alt="" /></a>
-								<h3>Videoclip para banda de rock</h3>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
-								<a href="https://youtu.be/nWFgizrANZs" class="image fit thumb"><img src="images/thumbs/005.jpg" alt="" /></a>
-								<h3>Vectorización de foto</h3>
-							</article>
-						</div>
-					</section>
+    /* Barra de navegación */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg-secondary);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
+    .nav-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--accent-color);
+    }
 
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
 
-					
-	<!-- Three 
-					<section id="three">
-						<h2>Contáctame</h2>
-						<p>Accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque lorem ipsum dolor.</p>
-						<div class="row">
-							<div class="col-8 col-12-small">
-								<form method="post" action="#">
-									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
-									</div>
-								</form>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</div>
-							<div class="col-4 col-12-small">
-								<ul class="labeled-icons">
-									<li>
-										<h3 class="icon solid fa-home"><span class="label">Dirección actual</span></h3>
-										Bogotá<br />
-										Colombia
-									</li>
-									<li>
-										<h3 class="icon solid fa-mobile-alt"><span class="label">Phone</span></h3>
-										000-000-0000
-									</li>
-									<li>
-										<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-										<a href="mailto:fernandocarstensps@gmail.com">fernandocarstensps@gmail.com</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</section>
-																			-->
-				<!-- Four -->
-				<!--
-					<section id="four">
-						<h2>Elements</h2>
+    .nav-links a {
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: color 0.2s;
+      font-size: 0.95rem;
+    }
 
-						<section>
-							<h4>Text</h4>
-							<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-							This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-							This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-							<hr />
-							<header>
-								<h4>Heading with a Subtitle</h4>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<header>
-								<h5>Heading with a Subtitle</h5>
-								<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-							</header>
-							<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-							<hr />
-							<h2>Heading Level 2</h2>
-							<h3>Heading Level 3</h3>
-							<h4>Heading Level 4</h4>
-							<h5>Heading Level 5</h5>
-							<h6>Heading Level 6</h6>
-							<hr />
-							<h5>Blockquote</h5>
-							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-							<h5>Preformatted</h5>
-							<pre><code>i = 0;
+    .nav-links a:hover {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
 
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-						</section>
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      cursor: pointer;
+      padding: 0.5rem;
+      font-size: 1.25rem;
+      transition: color 0.2s;
+    }
 
-						<section>
-							<h4>Lists</h4>
-							<div class="row">
-								<div class="col-6 col-12-xsmall">
-									<h5>Unordered</h5>
-									<ul>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-									<h5>Alternate</h5>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Sagittis adipiscing lorem eleifend.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<h5>Ordered</h5>
-									<ol>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-										<li>Dolor pulvinar etiam magna etiam.</li>
-										<li>Etiam vel felis at lorem sed viverra.</li>
-										<li>Felis enim feugiat dolore viverra.</li>
-									</ol>
-									<h5>Icons</h5>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-										<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-									</ul>
-								</div>
-							</div>
-							<h5>Actions</h5>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Default</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions small">
-								<li><a href="#" class="button primary small">Small</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small">Small</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary fit">Default</a></li>
-										<li><a href="#" class="button fit">Default</a></li>
-									</ul>
-								</div>
-								<div class="col-6 col-12-small">
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary small fit">Small</a></li>
-										<li><a href="#" class="button small fit">Small</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
+    .theme-toggle:hover {
+      color: var(--accent-color);
+    }
 
-						<section>
-							<h4>Table</h4>
-							<h5>Default</h5>
-							<div class="table-wrapper">
-								<table>
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
+    .mobile-menu {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-color);
+      cursor: pointer;
+    }
 
-							<h5>Alternate</h5>
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Description</th>
-											<th>Price</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Item One</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Two</td>
-											<td>Vis ac commodo adipiscing arcu aliquet.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Three</td>
-											<td> Morbi faucibus arcu accumsan lorem.</td>
-											<td>29.99</td>
-										</tr>
-										<tr>
-											<td>Item Four</td>
-											<td>Vitae integer tempus condimentum.</td>
-											<td>19.99</td>
-										</tr>
-										<tr>
-											<td>Item Five</td>
-											<td>Ante turpis integer aliquet porttitor.</td>
-											<td>29.99</td>
-										</tr>
-									</tbody>
-									<tfoot>
-										<tr>
-											<td colspan="2"></td>
-											<td>100.00</td>
-										</tr>
-									</tfoot>
-								</table>
-							</div>
-						</section>
+    header {
+      background: linear-gradient(to right, var(--header-gradient-start), var(--header-gradient-end));
+      color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
-						<section>
-							<h4>Buttons</h4>
-							<ul class="actions">
-								<li><a href="#" class="button primary">Primary</a></li>
-								<li><a href="#" class="button">Default</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button large">Large</a></li>
-								<li><a href="#" class="button">Default</a></li>
-								<li><a href="#" class="button small">Small</a></li>
-							</ul>
-							<ul class="actions fit">
-								<li><a href="#" class="button primary fit">Fit</a></li>
-								<li><a href="#" class="button fit">Fit</a></li>
-							</ul>
-							<ul class="actions fit small">
-								<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-								<li><a href="#" class="button fit small">Fit + Small</a></li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-								<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-							</ul>
-							<ul class="actions">
-								<li><span class="button primary disabled">Primary</span></li>
-								<li><span class="button disabled">Default</span></li>
-							</ul>
-						</section>
+    .profile-container {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
 
-						<section>
-							<h4>Form</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform gtr-50">
-									<div class="col-6 col-12-xsmall">
-										<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-									</div>
-									<div class="col-6 col-12-xsmall">
-										<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-									</div>
-									<div class="col-12">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
-										</select>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-										<label for="demo-priority-low">Low Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-normal" name="demo-priority">
-										<label for="demo-priority-normal">Normal Priority</label>
-									</div>
-									<div class="col-4 col-12-small">
-										<input type="radio" id="demo-priority-high" name="demo-priority">
-										<label for="demo-priority-high">High Priority</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-copy" name="demo-copy">
-										<label for="demo-copy">Email me a copy of this message</label>
-									</div>
-									<div class="col-6 col-12-small">
-										<input type="checkbox" id="demo-human" name="demo-human" checked>
-										<label for="demo-human">I am a human and not a robot</label>
-									</div>
-									<div class="col-12">
-										<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-									</div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
-						</section>
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
 
-						<section>
-							<h4>Image</h4>
-							<h5>Fit</h5>
-							<div class="box alt">
-								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/04.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/05.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/06.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/03.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/02.jpg" alt="" /></span></div>
-									<div class="col-4"><span class="image fit"><img src="images/thumbs/01.jpg" alt="" /></span></div>
-								</div>
-							</div>
-							<h5>Left &amp; Right</h5>
-							<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-							<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						</section>
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
 
-					</section>
-				-->
+    .profile-badge {
+      position: absolute;
+      bottom: 10px;
+      right: calc(50% - 85px);
+      background-color: var(--accent-color);
+      border-radius: 50%;
+      padding: 0.5rem;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
 
-			</div>
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
 
-		<!-- Footer -->
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.Instagram.com/portfoliofercarstens" class="icon brands fa-instagram" target="_blank"><span class="label">Twitter</span></a></li>
-						<li><a href="https://www.twitter.com/fercarstens" class="icon brands fa-twitter" target="_blank"><span class="label">Instagram</span></a></li>
-						<li><a href="https://www.youtube.com/user/fernandocarstensps" class="icon brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
-						<li><a href="mailto:fernandocarstensps@gmail.com" class="icon solid fa-envelope" target="_blank"><span class="label">Email</span></a></li>
-					</ul>
-				</div>
-			</footer>
+    .subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
 
-	</body>
+    .social-links a {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background-color 0.2s;
+      font-size: 1.25rem;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      background-color: rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .section {
+      margin-bottom: 4rem;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .section-icon {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      margin-right: 0.75rem;
+    }
+
+    h2 {
+      color: var(--accent-color);
+      font-size: 1.75rem;
+      margin: 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      display: flex;
+      align-items: center;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: transform 0.2s;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+    }
+
+    .tag i {
+      margin-right: 0.5rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.25rem;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--accent-color);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin: 0.75rem 0;
+    }
+
+    .project-tags .mini-tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.25rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-weight: 500;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 2px;
+      background-color: var(--accent-color);
+      transform: translateX(11px);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 40px;
+      margin-bottom: 2rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+    }
+
+    .timeline-content {
+      background-color: var(--card-bg);
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .timeline-date {
+      color: var(--accent-color);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .timeline-subtitle {
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .contact-info {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-info li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info i {
+      color: var(--accent-color);
+      font-size: 1.25rem;
+      margin-right: 1rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .contact-form {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-color);
+      background-color: var(--bg-secondary);
+      color: var(--text-color);
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+
+    .btn {
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+      background-color: var(--accent-hover);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+    }
+
+    .footer-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .go-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--accent-color);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, background-color 0.2s;
+      z-index: 90;
+    }
+
+    .go-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .go-top:hover {
+      background-color: var(--accent-hover);
+      text-decoration: none;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Media queries */
+    @media (max-width: 768px) {
+      .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .mobile-nav {
+        position: fixed;
+        top: 69px;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-secondary);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.3s, opacity 0.3s;
+        z-index: 99;
+      }
+
+      .mobile-nav.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navegación -->
+  <nav>
+    <div class="nav-logo">FC</div>
+    <div class="nav-links">
+      <a href="#about">Sobre Mí</a>
+      <a href="#skills">Habilidades</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#experience">Experiencia</a>
+      <a href="#education">Formación</a>
+      <a href="#contact">Contacto</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+    <button class="mobile-menu" id="mobileMenuBtn">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+
+  <!-- Menú móvil -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#about">Sobre Mí</a>
+    <a href="#skills">Habilidades</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#experience">Experiencia</a>
+    <a href="#education">Formación</a>
+    <a href="#contact">Contacto</a>
+  </div>
+
+  <!-- Header / Banner -->
+  <header>
+    <div class="profile-container">
+      <img src="img\1.jpg" alt="Fernando Carstens" class="profile-img">
+      <div class="profile-badge">
+        <i class="fas fa-code"></i>
+      </div>
+    </div>
+    <h1>Fernando Carstens</h1>
+    <p class="subtitle">Big Data & AI Professional | Python Developer</p>
+    <p>Apasionado por los videojuegos, el ánime, la tecnología y el análisis de datos.</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/fercarstens" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/fercarstens" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://t.me/FerC1414" target="_blank" title="Telegram">
+        <i class="fab fa-telegram-plane"></i>
+      </a>
+    </div>
+  </header>
+
+  <div class="content">
+    <!-- Sobre mí -->
+    <div class="section" id="about">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-user"></i>
+        </div>
+        <h2>Sobre mí</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Soy un profesional enfocado en <strong>Big Data</strong> y <strong>Machine Learning</strong> con experiencia en 
+            el desarrollo de soluciones de Business Intelligence. Me apasiona usar Python para resolver problemas complejos, 
+            automatizar tareas y extraer insights valiosos de los datos.
+          </p>
+          <p>
+            Actualmente, estoy trabajando en proyectos personales relacionados con videojuegos, 
+            análisis de League of Legends, análisis de sentimientos en Twitch/YouTube y desarrollo 
+            de bots de Telegram temáticos de Saint Seiya.
+          </p>
+          <p>
+            Mi objetivo es combinar mi pasión por la tecnología, los datos y los videojuegos para crear 
+            soluciones innovadoras que aporten valor.
+          </p>
+        </div>
+        <div class="media">
+          <img src="img/ai_analysis.jpg" alt="Data Visualization" style="width: 100%; border-radius: 0.75rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+        </div>
+      </div>
+    </div>
+
+    <!-- Habilidades -->
+    <div class="section" id="skills">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h2>Habilidades</h2>
+      </div>
+      
+      <h3>Tecnologías & Lenguajes</h3>
+      <div class="skills-container">
+        <span class="tag"><i class="fab fa-python"></i>Python</span>
+        <span class="tag"><i class="fas fa-database"></i>SQL</span>
+        <span class="tag"><i class="fas fa-chart-bar"></i>Power BI</span>
+        <span class="tag"><i class="fas fa-brain"></i>Machine Learning</span>
+        <span class="tag"><i class="fas fa-stream"></i>Streamlit</span>
+        <span class="tag"><i class="fab fa-bolt"></i>Flask</span>
+        <span class="tag"><i class="fas fa-project-diagram"></i>CRISP-DM</span>
+        <span class="tag"><i class="fab fa-git-alt"></i>Git</span>
+      </div>
+      
+      <h3>Herramientas de Big Data y Data Science</h3>
+      <div class="skills-container">
+        <span class="tag"><i class="fab fa-aws"></i>AWS</span>
+        <span class="tag"><i class="fas fa-table"></i>Pandas</span>
+        <span class="tag"><i class="fas fa-calculator"></i>NumPy</span>
+        <span class="tag"><i class="fas fa-chart-line"></i>Matplotlib</span>
+        <span class="tag"><i class="fas fa-mountain"></i>Tableau</span>
+        <span class="tag"><i class="fas fa-robot"></i>Scikit-learn</span>
+      </div>
+      
+      <h3>Soft Skills</h3>
+      <div class="skills-container">
+        <span class="tag"><i class="fas fa-comments"></i>Comunicación</span>
+        <span class="tag"><i class="fas fa-tasks"></i>Gestión de Proyectos</span>
+        <span class="tag"><i class="fas fa-lightbulb"></i>Resolución de Problemas</span>
+        <span class="tag"><i class="fas fa-users"></i>Trabajo en Equipo</span>
+        <span class="tag"><i class="fas fa-search"></i>Análisis Crítico</span>
+      </div>
+    </div>
+
+    <!-- Proyectos -->
+    <div class="section" id="projects">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-code-branch"></i>
+        </div>
+        <h2>Proyectos Destacados</h2>
+      </div>
+      
+      <div class="project-grid">
+        <!-- Proyecto 1 -->
+        <div class="project-card">
+          <img src="/api/placeholder/400/200" alt="Bot de Telegram" class="project-img">
+          <div class="project-content">
+            <h3 class="project-title">Bot de Telegram Saint Seiya</h3>
+            <p>Bot de Telegram para gestionar fichas de personajes, atributos y comandos de Saint Seiya utilizando SQLite como base de datos.</p>
+            <div class="project-tags">
+              <span class="mini-tag">Python</span>
+              <span class="mini-tag">Telegram API</span>
+              <span class="mini-tag">SQLite</span>
+            </div>
+            <a href="#" class="project-link">Ver detalles <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <!-- Proyecto 2 -->
+        <div class="project-card">
+          <img src="/api/placeholder/400/200" alt="League of Legends Analysis" class="project-img">
+          <div class="project-content">
+            <h3 class="project-title">Análisis Predictivo LoL</h3>
+            <p>Modelo predictivo de partidas de League of Legends con clusterización de perfiles de jugadores profesionales y análisis de sentimientos en chats.</p>
+            <div class="project-tags">
+              <span class="mini-tag">Python</span>
+              <span class="mini-tag">Machine Learning</span>
+              <span class="mini-tag">NLP</span>
+              <span class="mini-tag">Clustering</span>
+            </div>
+            <a href="#" class="project-link">Ver detalles <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+        <!-- Proyecto 3 -->
+        <div class="project-card">
+          <img src="/api/placeholder/400/200" alt="Manga Translator" class="project-img">
+          <div class="project-content">
+            <h3 class="project-title">Traductor de Mangas/Manhwas</h3>
+            <p>Sistema en desarrollo para traducir automáticamente y renderizar contenido gráfico de mangas y manhwas al español con procesamiento de imágenes.</p>
+            <div class="project-tags">
+              <span class="mini-tag">Python</span>
+              <span class="mini-tag">OCR</span>
+              <span class="mini-tag">Computer Vision</span>
+              <span class="mini-tag">NLP</span>
+            </div>
+            <a href="#" class="project-link">Ver detalles <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experiencia -->
+    <div class="section" id="experience">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h2>Experiencia Profesional</h2>
+      </div>
+      
+      <div class="timeline">
+        <!-- Puedes añadir tus experiencias reales aquí -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">2023 - Presente</div>
+            <h3 class="timeline-title">Analista de Big Data</h3>
+            <div class="timeline-subtitle">Empresa Tech, Sevilla</div>
+            <p>Desarrollo de soluciones de Business Intelligence y análisis predictivo utilizando Python y herramientas de visualización. Implementación de modelos de machine learning para optimizar procesos empresariales.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">2021 - 2023</div>
+            <h3 class="timeline-title">Data Analyst</h3>
+            <div class="timeline-subtitle">Consultoría Digital, Madrid</div>
+            <p>Análisis de datos para la toma de decisiones estratégicas. Creación de dashboards en Power BI y automatización de informes con Python.</p>
+          </div>
+        </div>
+        
+        <!-- Puedes añadir más experiencias si es necesario -->
+      </div>
+    </div>
+
+    <!-- Formación -->
+    <div class="section" id="education">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <h2>Formación Académica</h2>
+      </div>
+      
+      <div class="timeline">
+        <!-- Puedes añadir tu formación real aquí -->
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">2024 - 2025</div>
+            <h3 class="timeline-title">Máster en Big Data & Business Intelligence</h3>
+            <div class="timeline-subtitle">CEI Sevilla</div>
+            <p>Especialización en análisis de datos masivos, machine learning y visualización avanzada. Proyecto final sobre análisis predictivo en League of Legends.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="timeline-content">
+            <div class="timeline-date">2005 - 2010</div>
+            <h3 class="timeline-title">Grado en Ingeniería de Sistemas</h3>
+            <div class="timeline-subtitle">Universidad de Venezuela</div>
+            <p>Enfoque en programación, bases de datos y análisis de sistemas. Especialización en inteligencia artificial y procesamiento de datos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contacto -->
+    <div class="section" id="contact">
+      <div class="section-header">
+        <div class="section-icon">
+          <i class="fas fa-envelope"></i>
+        </div>
+        <h2>Contacto</h2>
+      </div>
+      
+      <div class="contact-grid">
+        <div>
+          <p>¿Charlamos sobre datos, proyectos o videojuegos? No dudes en ponerte en contacto conmigo.</p>
+          
+          <ul class="contact-info">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Sevilla, España</span>
+            </li>
+            <li>
+              <i class="fab fa-telegram-plane"></i>
+              <span><a href="https://t.me/FerC1414" target="_blank">@FerC1414</a></span>
+            </li>
+            <li>
+              <i class="fab fa-linkedin-in"></i>
+              <span><a href="https://linkedin.com/in/fercarstens" target="_blank">linkedin.com/in/fercarstens</a></span>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <span>tucorreo@example.com</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">
+              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Fernando Carstens. Todos los derechos reservados.</p>
+      <p>Hecho con <i class="fas fa-heart" style="color: #e74c3c;"></i>, datos y frikismo.</p>
+    </div>
+  </footer>
+
+  <!-- Botón volver arriba -->
+  <a href="#" class="go-top" id="goTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <script>
+    // Cambio de tema (oscuro/claro)
+    const themeToggle = document.getElementById('themeToggle');
+    const moonIcon = '<i class="fas fa-moon"></i>';
+    const sunIcon = '<i class="fas fa-sun"></i>';
+    let isDarkMode = true;
+
+    // Verificar si hay preferencia guardada en localStorage
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.setAttribute('data-theme', 'light');
+      themeToggle.innerHTML = sunIcon;
+      isDarkMode = false;
+    }
+
+    themeToggle.addEventListener('click', () => {
+      if (isDarkMode) {
+        document.body.setAttribute('data-theme', 'light');
+        themeToggle.innerHTML = sunIcon;
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.body.removeAttribute('data-theme');
+        themeToggle.innerHTML = moonIcon;
+        localStorage.setItem('theme', 'dark');
+      }
+      isDarkMode = !isDarkMode;
+    });
+
+    // Menú móvil
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('active');
+      const isOpen = mobileNav.classList.contains('active');
+      mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    // Cierre del menú móvil al hacer clic en un enlace
+    const mobileLinks = mobileNav.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+
+    // Botón volver arriba
+    const goTop = document.getElementById('goTop');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        goTop.classList.add('visible');
+      } else {
+        goTop.classList.remove('visible');
+      }
+    });
+
+    goTop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Formulario de contacto (simulado)
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Simulación de envío
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+      submitBtn.disabled = true;
+      
+      setTimeout(() => {
+        alert('¡Mensaje enviado con éxito! (Esto es una simulación)');
+        contactForm.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }, 1500);
+    });
+
+    // Animación de aparición al scroll
+    const sections = document.querySelectorAll('.section');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    sections.forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
+      section.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(section);
+    });
+  </script>
+</body>
 </html>
