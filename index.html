@@ -55,71 +55,87 @@
     }
 
     /* Barra de navegación */
+
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background-color: var(--bg-secondary);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      padding: 0.75rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .nav-logo {
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: var(--accent-color);
-    }
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--accent-color);
+}
+/* Menú de escritorio */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-    }
+.nav-links a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s;
+  font-size: 0.95rem;
+}
 
-    .nav-links a {
-      color: var(--text-secondary);
-      font-weight: 500;
-      transition: color 0.2s;
-      font-size: 0.95rem;
-    }
+.nav-links a:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+}
 
-    .nav-links a:hover {
-      color: var(--accent-color);
-      text-decoration: none;
-    }
+/* Acciones del nav */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+.theme-toggle,
+.mobile-menu {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
 
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-secondary);
-      cursor: pointer;
-      padding: 0.5rem;
-      font-size: 1.25rem;
-      transition: color 0.2s;
-    }
+.theme-toggle:hover,
+.mobile-menu:hover {
+  color: var(--accent-color);
+}
+/* Menú móvil */
+.mobile-nav {
+  position: fixed;
+  top: 69px;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-secondary);
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transform: translateY(-100%);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  z-index: 99;
+}
 
-    .theme-toggle:hover {
-      color: var(--accent-color);
-    }
-
-    .mobile-menu {
-      display: none;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: var(--text-color);
-      cursor: pointer;
-    }
-
+.mobile-nav.active {
+  transform: translateY(0);
+  opacity: 1;
+}
     header {
       background: linear-gradient(to right, var(--header-gradient-start), var(--header-gradient-end));
       color: white;
@@ -501,68 +517,37 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Media queries */
-    @media (max-width: 768px) {
-      .about-grid, .contact-grid {
-        grid-template-columns: 1fr;
-      }
+/* Responsive: ocultar o mostrar según tamaño */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 
-      .nav-links {
-        display: none;
-      }
+  .mobile-menu {
+    display: block;
+  }
+}
 
-      .mobile-menu {
-        display: block;
-      }
+@media screen and (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
 
-      .mobile-nav {
-        position: fixed;
-        top: 69px;
-        left: 0;
-        right: 0;
-        background-color: var(--bg-secondary);
-        padding: 1rem;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        transition: transform 0.3s, opacity 0.3s;
-        z-index: 99;
-      }
+  .mobile-nav {
+    display: none;
+  }
+}
 
-      .mobile-nav.active {
-        transform: translateY(0);
-        opacity: 1;
-      }
+
     }
   </style>
 </head>
 <body>
   <!-- Navegación -->
-  <nav>
-    <div class="nav-logo">FC</div>
-    <div class="nav-links">
-      <a href="#about">Sobre Mí</a>
-      <a href="#skills">Habilidades</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#experience">Experiencia</a>
-      <a href="#education">Formación</a>
-      <a href="#contact">Contacto</a>
-    </div>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-      </button>
-    </div>
-    <button class="mobile-menu" id="mobileMenuBtn">
-      <i class="fas fa-bars"></i>
-    </button>
-  </nav>
-
-  <!-- Menú móvil -->
-  <div class="mobile-nav" id="mobileNav">
+<nav>
+  <div class="nav-logo">FC</div>
+  
+  <div class="nav-links" id="desktopNav">
     <a href="#about">Sobre Mí</a>
     <a href="#skills">Habilidades</a>
     <a href="#projects">Proyectos</a>
@@ -570,6 +555,27 @@
     <a href="#education">Formación</a>
     <a href="#contact">Contacto</a>
   </div>
+
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <button class="mobile-menu" id="mobileMenuBtn" aria-label="Abrir menú">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- Menú móvil -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about">Sobre Mí</a>
+  <a href="#skills">Habilidades</a>
+  <a href="#projects">Proyectos</a>
+  <a href="#experience">Experiencia</a>
+  <a href="#education">Formación</a>
+  <a href="#contact">Contacto</a>
+</div>
 
   <!-- Header / Banner -->
   <header>
@@ -680,7 +686,7 @@
       <div class="project-grid">
         <!-- Proyecto 1 -->
         <div class="project-card">
-          <img src="/api/placeholder/400/200" alt="Bot de Telegram" class="project-img">
+          <img src="img/ai_analysis.jpg" alt="Bot de Telegram" class="project-img">
           <div class="project-content">
             <h3 class="project-title">Bot de Telegram Saint Seiya</h3>
             <p>Bot de Telegram para gestionar fichas de personajes, atributos y comandos de Saint Seiya utilizando SQLite como base de datos.</p>
@@ -695,7 +701,7 @@
         
         <!-- Proyecto 2 -->
         <div class="project-card">
-          <img src="/api/placeholder/400/200" alt="League of Legends Analysis" class="project-img">
+          <img src="img/lol_project.jpg" alt="League of Legends Analysis" class="project-img">
           <div class="project-content">
             <h3 class="project-title">Análisis Predictivo LoL</h3>
             <p>Modelo predictivo de partidas de League of Legends con clusterización de perfiles de jugadores profesionales y análisis de sentimientos en chats.</p>
@@ -711,7 +717,7 @@
         
         <!-- Proyecto 3 -->
         <div class="project-card">
-          <img src="/api/placeholder/400/200" alt="Manga Translator" class="project-img">
+          <img src="img/cnn_project.jpg" alt="Manga Translator" class="project-img">
           <div class="project-content">
             <h3 class="project-title">Traductor de Mangas/Manhwas</h3>
             <p>Sistema en desarrollo para traducir automáticamente y renderizar contenido gráfico de mangas y manhwas al español con procesamiento de imágenes.</p>
@@ -727,7 +733,7 @@
       </div>
     </div>
 
-    <!-- Experiencia -->
+    <!-- Experiencia
     <div class="section" id="experience">
       <div class="section-header">
         <div class="section-icon">
@@ -737,7 +743,7 @@
       </div>
       
       <div class="timeline">
-        <!-- Puedes añadir tus experiencias reales aquí -->
+        <!-- Puedes añadir tus experiencias reales aquí --
         <div class="timeline-item">
           <div class="timeline-dot">
             <i class="fas fa-briefcase"></i>
@@ -762,10 +768,10 @@
           </div>
         </div>
         
-        <!-- Puedes añadir más experiencias si es necesario -->
+        <!-- Puedes añadir más experiencias si es necesario --
       </div>
     </div>
-
+    -->
     <!-- Formación -->
     <div class="section" id="education">
       <div class="section-header">
@@ -831,7 +837,7 @@
             </li>
             <li>
               <i class="fas fa-envelope"></i>
-              <span>tucorreo@example.com</span>
+              <span>fercarstens7@gmail.com</span>
             </li>
           </ul>
         </div>
