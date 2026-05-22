@@ -25,30 +25,64 @@
   <canvas id="my-canvas"></canvas>
 
   <script>
-    const mindarThree = new window.MINDAR.IMAGE.MindARThree({
-      container: document.body,
-      imageTargetSrc: 'assets/targets.mind', // Archivo compilado de targets
-    });
+    async function startAR() {
+      try {
+        // Solicitar permiso de cámara
+        await navigator.mediaDevices.getUserMedia({ video: true });
 
-    const { renderer, scene, camera } = mindarThree;
+        const mindarThree = new window.MINDAR.IMAGE.MindARThree({
+          container: document.body,
+          imageTargetSrc: 'assets/targets.mind',
+        });
 
-    // Crear grupo para el marcador
-    const anchor = mindarThree.addAnchor(0); // 0 es el índice del marcador
+        const { renderer, scene, camera } = mindarThree;
 
-    // Crear geometría y material para mostrar (similar a tu imagen)
-    const geometry = new THREE.PlaneGeometry(1.5, 2.6);
-    const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('assets/asset_leon.png');
-    const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.rotation.x = -Math.PI / 2;
-    mesh.position.z = 0;
+        // Crear grupo para el marcador
+        const anchor = mindarThree.addAnchor(0);
 
-    anchor.group.add(mesh);
+        // Crear geometría y material para mostrar
+        const geometry = new THREE.PlaneGeometry(1.5, 2.6);
+        const textureLoader = new THREE.TextureLoader();
+        const texture = textureLoader.load('assets/asset_leon.png');
+        const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+        const mesh = new THREE.Mesh(geometry, material);
+        mesh.rotation.x = -Math.PI / 2;
+        mesh.position.z = 0;
 
-    // Iniciar
-    mindarThree.start();
-    renderer.setAnimationLoop(() => renderer.render(scene, camera));
+        anchor.group.add(mesh);
+
+        // Iniciar AR
+        await mindarThree.start();
+        renderer.setAnimationLoop(() => renderer.render(scene, camera));
+
+        console.log('AR iniciado correctamente');
+      } catch (error) {
+        console.error('Error iniciando AR:', error);
+        document.body.innerHTML = `
+          <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: black; color: white; font-family: Arial; text-align: center;">
+            <div>
+              <h2>❌ Error iniciando Realidad Aumentada</h2>
+              <p>${error.message}</p>
+              <p style="font-size: 0.9em; margin-top: 20px;">Asegúrate de:</p>
+              <ul style="text-align: left; display: inline-block;">
+                <li>Permitir el acceso a la cámara</li>
+                <li>Usar un navegador moderno (Chrome, Firefox, Safari)</li>
+                <li>Estar en HTTPS o localhost</li>
+              </ul>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Iniciar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', startAR);
+    // Por si el script se carga después
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', startAR);
+    } else {
+      startAR();
+    }
   </script>
 
 </body>
