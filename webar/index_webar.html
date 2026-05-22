@@ -2,10 +2,11 @@
 <html>
 <head>
   <meta charset="utf-8">
-
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@r127/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/helper.js"></script>
 
   <style>
     body {
@@ -13,36 +14,42 @@
       overflow: hidden;
       background: black;
     }
+    canvas {
+      display: block;
+    }
   </style>
 </head>
 
 <body>
 
-<a-scene
-  embedded
-  vr-mode-ui="enabled: false"
-  loading-screen="enabled: false"
-  arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
->
+  <canvas id="my-canvas"></canvas>
 
-  <a-marker
-    type="pattern"
-    url="assets/marker_leon.patt"
-  >
+  <script>
+    const mindarThree = new window.MINDAR.IMAGE.MindARThree({
+      container: document.body,
+      imageTargetSrc: 'assets/targets.mind', // Archivo compilado de targets
+    });
 
-    <a-image
-      src="assets/asset_leon.png"
-      position="0 0.5 0"
-      rotation="-90 0 0"
-      scale="1.5 2.6 1"
-      material="transparent: true;"
-    ></a-image>
+    const { renderer, scene, camera } = mindarThree;
 
-  </a-marker>
+    // Crear grupo para el marcador
+    const anchor = mindarThree.addAnchor(0); // 0 es el índice del marcador
 
-  <a-entity camera></a-entity>
+    // Crear geometría y material para mostrar (similar a tu imagen)
+    const geometry = new THREE.PlaneGeometry(1.5, 2.6);
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load('assets/asset_leon.png');
+    const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.rotation.x = -Math.PI / 2;
+    mesh.position.z = 0;
 
-</a-scene>
+    anchor.group.add(mesh);
+
+    // Iniciar
+    mindarThree.start();
+    renderer.setAnimationLoop(() => renderer.render(scene, camera));
+  </script>
 
 </body>
 </html>
