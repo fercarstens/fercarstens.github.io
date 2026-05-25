@@ -8,9 +8,6 @@
   <title>Fernando Carstens - Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
-  
-  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body>
   <!-- Navegación -->
@@ -350,32 +347,16 @@
   </div>
 
   <p style="margin-bottom: 1.5rem;">
-    Experimentación con Realidad Aumentada usando AR.js. Permite el acceso a la cámara para ver la AR.
+    Experimentación con Realidad Aumentada.
   </p>
 
-  <div class="ar-container" id="ar-container" style="width: 100%; height: 600px; border-radius: 0.75rem; overflow: hidden;">
-    <a-scene
-      embedded
-      vr-mode-ui="enabled: false"
-      loading-screen="enabled: false"
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-      style="width: 100%; height: 100%;"
-    >
-      <a-marker
-        type="pattern"
-        url="webar/assets/marker_leon.patt"
-      >
-        <a-image
-          src="webar/assets/asset_leon.png"
-          position="0 0.5 0"
-          rotation="-90 0 0"
-          scale="1.5 2.6 1"
-          material="transparent: true;"
-        ></a-image>
-      </a-marker>
-
-      <a-entity camera></a-entity>
-    </a-scene>
+  <div class="ar-container">
+    <iframe
+      src="webar/index_webar.html"
+      frameborder="0"
+      allow="camera; microphone; xr-spatial-tracking"
+      allowfullscreen
+    ></iframe>
   </div>
 </div>
 
