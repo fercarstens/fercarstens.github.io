@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   
-  <script src="https://cdn.jsdelivr.net/npm/three@r127/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image.prod.js"></script>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
 <body>
   <!-- Navegación -->
@@ -350,108 +350,34 @@
   </div>
 
   <p style="margin-bottom: 1.5rem;">
-    Experimentación con Realidad Aumentada usando MindAR. Permite el acceso a la cámara para ver la AR.
+    Experimentación con Realidad Aumentada usando AR.js. Permite el acceso a la cámara para ver la AR.
   </p>
 
-  <div class="ar-container" id="ar-container" style="width: 100%; height: 600px; background: black; border-radius: 0.75rem; overflow: hidden; position: relative;">
-    <div class="ar-loading" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-align: center; z-index: 10;">
-      <p>Cargando Realidad Aumentada...</p>
-      <p style="font-size: 0.9em; margin-top: 10px;">Permite el acceso a la cámara cuando se solicite</p>
-    </div>
+  <div class="ar-container" id="ar-container" style="width: 100%; height: 600px; border-radius: 0.75rem; overflow: hidden;">
+    <a-scene
+      embedded
+      vr-mode-ui="enabled: false"
+      loading-screen="enabled: false"
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      style="width: 100%; height: 100%;"
+    >
+      <a-marker
+        type="pattern"
+        url="webar/assets/marker_leon.patt"
+      >
+        <a-image
+          src="webar/assets/asset_leon.png"
+          position="0 0.5 0"
+          rotation="-90 0 0"
+          scale="1.5 2.6 1"
+          material="transparent: true;"
+        ></a-image>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
   </div>
 </div>
-
-<script>
-  let arStarted = false;
-  
-  async function startAROnPage() {
-    if (arStarted) return;
-    arStarted = true;
-    
-    try {
-      // Esperar a que las librerías carguen
-      let attempts = 0;
-      while ((typeof window.MINDAR === 'undefined' || typeof window.THREE === 'undefined') && attempts < 20) {
-        await new Promise(resolve => setTimeout(resolve, 250));
-        attempts++;
-      }
-
-      if (typeof window.MINDAR === 'undefined' || typeof window.THREE === 'undefined') {
-        throw new Error('No se pudieron cargar las librerías de AR');
-      }
-
-      // Solicitar permiso de cámara
-      await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
-
-      const container = document.getElementById('ar-container');
-      
-      const mindarThree = new window.MINDAR.IMAGE.MindARThree({
-        container: container,
-        imageTargetSrc: 'webar/assets/targets.mind',
-      });
-
-      const { renderer, scene, camera } = mindarThree;
-
-      // Crear grupo para el marcador
-      const anchor = mindarThree.addAnchor(0);
-
-      // Crear geometría y material para mostrar
-      const geometry = new window.THREE.PlaneGeometry(1.5, 2.6);
-      const textureLoader = new window.THREE.TextureLoader();
-      const texture = textureLoader.load('webar/assets/asset_leon.png');
-      const material = new window.THREE.MeshBasicMaterial({ map: texture, transparent: true });
-      const mesh = new window.THREE.Mesh(geometry, material);
-      mesh.rotation.x = -Math.PI / 2;
-      mesh.position.z = 0;
-
-      anchor.group.add(mesh);
-
-      // Remover el texto de carga
-      const loading = container.querySelector('.ar-loading');
-      if (loading) loading.remove();
-
-      // Iniciar AR
-      await mindarThree.start();
-      renderer.setAnimationLoop(() => renderer.render(scene, camera));
-
-      console.log('✅ AR iniciado correctamente');
-    } catch (error) {
-      console.error('Error iniciando AR:', error);
-      const container = document.getElementById('ar-container');
-      container.innerHTML = `
-        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: black; color: white; font-family: Arial; text-align: center; padding: 20px;">
-          <div>
-            <h3>❌ Error en Realidad Aumentada</h3>
-            <p><strong>${error.name}:</strong> ${error.message}</p>
-            <p style="font-size: 0.9em; margin-top: 15px;">Verifica que:</p>
-            <ul style="text-align: left; display: inline-block; font-size: 0.9em;">
-              <li>✓ Permitiste el acceso a la cámara</li>
-              <li>✓ Usas un navegador moderno</li>
-              <li>✓ El archivo targets.mind existe</li>
-            </ul>
-          </div>
-        </div>
-      `;
-    }
-  }
-
-  // Esperar a que la página esté lista y el usuario desplace hasta la sección
-  window.addEventListener('load', () => {
-    // Usar Intersection Observer para detectar cuando la sección AR es visible
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !arStarted) {
-          startAROnPage();
-        }
-      });
-    }, { threshold: 0.3 });
-
-    const arSection = document.getElementById('ar-container');
-    if (arSection) {
-      observer.observe(arSection);
-    }
-  });
-</script>
 
 
 <footer>
