@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  
-  <script src="https://cdn.jsdelivr.net/npm/three@r127/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.0/dist/mindar-image.prod.js"></script>
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 
   <style>
     body {
@@ -13,103 +13,33 @@
       overflow: hidden;
       background: black;
     }
-    canvas {
-      display: block;
-    }
-    .loading {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-family: Arial;
-      text-align: center;
-      z-index: 100;
-    }
   </style>
 </head>
 
 <body>
-  <div class="loading">Cargando Realidad Aumentada...</div>
 
-  <script>
-    function checkLibraries() {
-      if (typeof window.MINDAR === 'undefined' || typeof window.THREE === 'undefined') {
-        console.warn('Librerías aún cargándose, reintentando...');
-        setTimeout(checkLibraries, 500);
-        return false;
-      }
-      return true;
-    }
+<a-scene
+  embedded
+  vr-mode-ui="enabled: false"
+  loading-screen="enabled: false"
+  arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+>
 
-    async function startAR() {
-      try {
-        // Esperar a que las librerías se carguen
-        if (!checkLibraries()) {
-          setTimeout(startAR, 1000);
-          return;
-        }
+<a-marker
+  type="pattern"
+  url="assets/marker_leon.patt"
+>
 
-        // Solicitar permiso de cámara
-        await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+  <a-box
+    position="0 0.5 0"
+    material="color: red;"
+  ></a-box>
 
-        const mindarThree = new window.MINDAR.IMAGE.MindARThree({
-          container: document.body,
-          imageTargetSrc: 'assets/targets.mind',
-        });
+</a-marker>
 
-        const { renderer, scene, camera } = mindarThree;
+  <a-entity camera></a-entity>
 
-        // Crear grupo para el marcador
-        const anchor = mindarThree.addAnchor(0);
-
-        // Crear geometría y material para mostrar
-        const geometry = new window.THREE.PlaneGeometry(1.5, 2.6);
-        const textureLoader = new window.THREE.TextureLoader();
-        const texture = textureLoader.load('assets/asset_leon.png');
-        const material = new window.THREE.MeshBasicMaterial({ map: texture, transparent: true });
-        const mesh = new window.THREE.Mesh(geometry, material);
-        mesh.rotation.x = -Math.PI / 2;
-        mesh.position.z = 0;
-
-        anchor.group.add(mesh);
-
-        // Remover el texto de carga
-        document.querySelector('.loading').style.display = 'none';
-
-        // Iniciar AR
-        await mindarThree.start();
-        renderer.setAnimationLoop(() => renderer.render(scene, camera));
-
-        console.log('✅ AR iniciado correctamente');
-      } catch (error) {
-        console.error('Error iniciando AR:', error);
-        document.body.innerHTML = `
-          <div style="display: flex; align-items: center; justify-content: center; height: 100vh; background: black; color: white; font-family: Arial; text-align: center; padding: 20px;">
-            <div>
-              <h2>❌ Error iniciando Realidad Aumentada</h2>
-              <p><strong>${error.name}:</strong> ${error.message}</p>
-              <p style="font-size: 0.9em; margin-top: 20px;">Asegúrate de:</p>
-              <ul style="text-align: left; display: inline-block;">
-                <li>✓ Permitir el acceso a la cámara</li>
-                <li>✓ Usar Chrome, Firefox, Safari o Edge recientes</li>
-                <li>✓ Estar en HTTPS o localhost</li>
-                <li>✓ El archivo <code>targets.mind</code> existe en <code>assets/</code></li>
-              </ul>
-              <p style="margin-top: 20px; font-size: 0.85em;">Abre la consola (F12) para más detalles.</p>
-            </div>
-          </div>
-        `;
-      }
-    }
-
-    // Iniciar automáticamente al cargar la página
-    window.addEventListener('load', startAR);
-    // Si ya está cargado, iniciar de inmediato
-    if (document.readyState === 'complete') {
-      startAR();
-    }
-  </script>
+</a-scene>
 
 </body>
 </html>
