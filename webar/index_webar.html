@@ -25,17 +25,20 @@
   arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
 >
 
-<a-marker
+  <a-marker
   type="pattern"
   url="assets/marker_leon.patt"
->
+  >
 
-  <a-box
-    position="0 0.5 0"
-    material="color: red;"
-  ></a-box>
+  <a-image
+  src="assets/asset_leon.png"
+  position="0 0.5 0"
+  rotation="-90 0 0"
+  scale="1.5 2.6 1"
+  material="transparent: true;"
+  ></a-image>
 
-</a-marker>
+  </a-marker>
 
   <a-entity camera></a-entity>
 
