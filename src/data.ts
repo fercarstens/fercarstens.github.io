@@ -124,6 +124,6 @@ export const stack: { grupo: string; items: string[] }[] = [
 ]
 
 export const formacion = [
-  { fecha: "2024 – 2025", titulo: "Máster en Big Data y Business Intelligence", lugar: "CEI Sevilla", texto: "Machine learning, análisis de datos masivos y visualización." },
+  { fecha: "2024 – 2025", titulo: "Máster en Big Data, Inteligencia Artificial y Ciberseguridad", lugar: "CEI Sevilla", texto: "Machine learning, análisis de datos masivos y visualización." },
   { fecha: "2005 – 2010", titulo: "Ingeniería de Sistemas", lugar: "Venezuela", texto: "Programación, bases de datos y análisis de sistemas." },
 ]
